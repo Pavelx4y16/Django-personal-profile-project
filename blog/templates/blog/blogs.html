@@ -1,0 +1,13 @@
+{% extends 'portfolio/base.html' %}
+
+{% block body %}
+    <h1>Blogs page</h1>
+    <p>(We have already {{ posts|length }} post{{ post|length|pluralize }})</p>
+    {% for post in posts %}
+        <div>
+            <h3><a href="{% url 'blog:detail' post.id %}">{{ post.title }}</a></h3>
+            <p>Description: {{ post.description|truncatechars:30 }}</p>
+            <p>Date: {{ post.date|date:'M d Y' }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

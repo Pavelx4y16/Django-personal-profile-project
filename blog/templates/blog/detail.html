@@ -1,0 +1,13 @@
+{% extends 'portfolio/base.html' %}
+
+{% block body %}
+    <head>
+        <title>Post number {{ post.id }}</title>
+    </head>
+    <h1>Post detail page</h1>
+    <div>
+        <h3>{{ post.title }}</h3>
+        <p>Description: {{ post.description }}</p>
+        <p>Date: {{ post.date }}</p>
+    </div>
+{% endblock %}
